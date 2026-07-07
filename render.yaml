@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: rag-knowledge-assistant-api
+    runtime: java
+    rootDir: backend
+    buildCommand: mvn -q clean package -DskipTests
+    startCommand: java -jar target/rag-knowledge-assistant-1.0.0.jar
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+    plan: free

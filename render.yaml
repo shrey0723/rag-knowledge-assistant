@@ -1,10 +1,9 @@
 services:
   - type: web
     name: rag-knowledge-assistant-api
-    runtime: java
+    runtime: docker
     rootDir: backend
-    buildCommand: mvn -q clean package -DskipTests
-    startCommand: java -jar target/rag-knowledge-assistant-1.0.0.jar
+    dockerfilePath: ./Dockerfile
     envVars:
       - key: GEMINI_API_KEY
         sync: false

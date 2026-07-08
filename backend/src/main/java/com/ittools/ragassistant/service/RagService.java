@@ -8,6 +8,7 @@ import com.ittools.ragassistant.repository.ChunkRepository;
 import com.ittools.ragassistant.repository.DocumentRepository;
 import com.ittools.ragassistant.repository.QueryLogRepository;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 @Service
+@Transactional
 public class RagService {
 
     private static final int TOP_K = 4;
